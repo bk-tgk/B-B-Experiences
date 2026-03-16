@@ -1,314 +1,1135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>B&B Experiences | Senior Living Experiences</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B&B Experiences | Thoughtful Treats, Tours & Transportation for Senior Living</title>
+  <meta
+    name="description"
+    content="B&B Experiences brings thoughtful senior living experiences to life through resident-favorite treats, memorable outings, and reliable transportation."
+  />
+  <style>
+    :root {
+      --navy: #16324a;
+      --blue: #2d6f9f;
+      --sky: #eef6fb;
+      --gold: #d6ad59;
+      --cream: #faf7f1;
+      --text: #21303d;
+      --muted: #5e6d79;
+      --white: #ffffff;
+      --border: #d9e4eb;
+      --shadow: 0 14px 36px rgba(18, 45, 70, 0.08);
+      --radius: 26px;
+      --max: 1220px;
+    }
 
-<style>
+    * {
+      box-sizing: border-box;
+    }
 
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f9fafb;
-color:#333;
-line-height:1.6;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header{
-background:#0b6efd;
-color:white;
-padding:20px;
-text-align:center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:15px;
-background:white;
-box-shadow:0 2px 5px rgba(0,0,0,0.05);
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-nav a{
-text-decoration:none;
-font-weight:bold;
-color:#333;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.hero{
-background-image:url("https://images.unsplash.com/photo-1576765607924-9a1f33f0c1ab?auto=format&fit=crop&w=2000&q=80");
-background-size:cover;
-background-position:center;
-height:450px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-}
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-.hero-text{
-background:rgba(0,0,0,0.55);
-padding:40px;
-border-radius:8px;
-max-width:700px;
-}
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 12px 16px;
+      font-size: 17px;
+      font-weight: 700;
+    }
 
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
+    .topbar a {
+      text-decoration: underline;
+    }
 
-.hero p{
-font-size:20px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(217, 228, 235, 0.9);
+    }
 
-.cta{
-margin-top:20px;
-font-size:20px;
-}
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 0;
+    }
 
-section{
-padding:60px 20px;
-max-width:1100px;
-margin:auto;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-h2{
-font-size:34px;
-margin-bottom:20px;
-text-align:center;
-}
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: var(--shadow);
+    }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-}
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.05;
+      color: var(--navy);
+    }
 
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 3px 12px rgba(0,0,0,0.08);
-}
+    .brand-copy p {
+      margin: 4px 0 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
 
-.card img{
-width:100%;
-border-radius:8px;
-margin-bottom:15px;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+    }
 
-.card h3{
-font-size:26px;
-margin-bottom:10px;
-}
+    .nav-links a:hover {
+      color: var(--blue);
+    }
 
-.card p{
-font-size:18px;
-}
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      white-space: nowrap;
+    }
 
-.about{
-background:#eef5ff;
-}
+    .nav-cta:hover {
+      background: var(--blue);
+    }
 
-.contact{
-text-align:center;
-}
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(15, 33, 52, 0.88) 0%, rgba(15, 33, 52, 0.74) 46%, rgba(15, 33, 52, 0.34) 100%),
+        url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+      color: var(--white);
+    }
 
-.contact a{
-font-size:22px;
-color:#0b6efd;
-text-decoration:none;
-font-weight:bold;
-}
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: center;
+      min-height: 760px;
+      padding: 72px 0;
+    }
 
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
+    .eyebrow {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
 
-.large{
-font-size:20px;
-}
+    .hero h2 {
+      margin: 0 0 20px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -1px;
+      max-width: 760px;
+    }
 
-</style>
+    .hero-lead {
+      margin: 0 0 26px;
+      font-size: 23px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 780px;
+    }
+
+    .hero-sub {
+      display: grid;
+      gap: 14px;
+      margin: 30px 0 34px;
+      max-width: 760px;
+    }
+
+    .hero-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .hero-point span {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(214, 173, 89, 0.18);
+      border: 1px solid rgba(214, 173, 89, 0.35);
+      color: #ffe7b1;
+      display: inline-grid;
+      place-items: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-size: 19px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #222;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.97);
+      color: var(--text);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 10px;
+      font-size: 29px;
+      color: var(--navy);
+    }
+
+    .hero-card p {
+      margin: 0 0 18px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .status-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--cream);
+    }
+
+    .status-item strong {
+      display: block;
+      font-size: 19px;
+      color: var(--navy);
+    }
+
+    .status-item small {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .pill {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-head {
+      max-width: 860px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.1;
+      color: var(--navy);
+      letter-spacing: -0.6px;
+    }
+
+    .section-head p {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .intro-band {
+      background: var(--sky);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px 22px;
+      box-shadow: 0 8px 24px rgba(23, 50, 77, 0.05);
+    }
+
+    .intro-card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .intro-card p {
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-top: 28px;
+    }
+
+    .problem-card {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(23, 50, 77, 0.04);
+    }
+
+    .problem-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: var(--sky);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .problem-card h3 {
+      margin: 0 0 10px;
+      font-size: 27px;
+      color: var(--navy);
+    }
+
+    .problem-card p {
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .admin-section {
+      background: linear-gradient(180deg, #fbfcfe 0%, #f4f8fb 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .admin-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(23, 50, 77, 0.05);
+    }
+
+    .admin-card h3 {
+      margin: 0 0 10px;
+      font-size: 25px;
+      color: var(--navy);
+    }
+
+    .admin-card p {
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .services-wrap {
+      display: grid;
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .service-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .service-image {
+      min-height: 430px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-content {
+      padding: 40px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-tag {
+      display: inline-block;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--sky);
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .service-content h3 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 3vw, 40px);
+      line-height: 1.12;
+      color: var(--navy);
+    }
+
+    .service-content p {
+      margin: 0 0 18px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 34px;
+      font-size: 19px;
+      color: var(--text);
+    }
+
+    .bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 10px;
+      top: -1px;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--blue);
+    }
+
+    .service-note {
+      margin-top: auto;
+      display: inline-block;
+      width: fit-content;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .about-section {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.12;
+      color: var(--navy);
+    }
+
+    .about-copy p {
+      margin: 0 0 18px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .about-panel {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 22px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .about-panel h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .about-panel ul {
+      margin: 0;
+      padding-left: 22px;
+      font-size: 19px;
+      color: var(--text);
+    }
+
+    .contact-section {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-copy h2 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.12;
+    }
+
+    .contact-copy p {
+      margin: 0;
+      font-size: 21px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 62px;
+      padding: 16px 24px;
+      background: var(--white);
+      color: var(--navy);
+      border-radius: 999px;
+      font-size: 21px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .contact-small {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    footer {
+      background: #10263a;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 28px 0;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-wrap,
+      .about-grid,
+      .contact-box,
+      .service-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(15, 33, 52, 0.88) 0%, rgba(15, 33, 52, 0.76) 45%, rgba(15, 33, 52, 0.62) 100%),
+          url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+      }
+
+      .hero-wrap {
+        min-height: auto;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .problem-grid,
+      .admin-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-image {
+        min-height: 320px;
+      }
+
+      .about-image img {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .hero-wrap {
+        padding: 44px 0 54px;
+        gap: 26px;
+      }
+
+      .hero h2 {
+        font-size: 39px;
+      }
+
+      .hero-lead,
+      .section-head p,
+      .about-copy p,
+      .contact-copy p,
+      .service-content p {
+        font-size: 18px;
+      }
+
+      .hero-point,
+      .bullets li,
+      .problem-card p,
+      .intro-card p,
+      .admin-card p,
+      .contact-link {
+        font-size: 17px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .intro-grid,
+      .problem-grid,
+      .admin-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .status-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      section {
+        padding: 66px 0;
+      }
+
+      .hero-card,
+      .service-content,
+      .contact-box {
+        padding: 24px;
+      }
+
+      .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
-
-<header>
-<h1>B&B Experiences</h1>
-<p class="large">Making senior living more enjoyable, connected, and supported.</p>
-</header>
-
-<nav>
-<a href="#about">About</a>
-<a href="#services">Our Experiences</a>
-<a href="#contact">Contact</a>
-</nav>
-
-
-<div class="hero">
-
-<div class="hero-text">
-<h1>Bringing Joy Back To Senior Living</h1>
-<p>From favorite snacks to fun field trips and reliable transportation, B&B Experiences takes care of everything for senior living communities.</p>
-
-<div class="cta">
-Now welcoming <b>10 senior living communities</b> for our vending machine program.
-</div>
-
-</div>
-
-</div>
-
-
-<section id="about" class="about">
-
-<h2>Our Story</h2>
-
-<p class="large">
-
-B&B Experiences was founded by a couple who went through the same challenge many families face — placing their parents into senior living homes.
-
-Every visit brought the same requests:
-
-“Can you bring me my favorite snacks?”  
-“I wish we could go somewhere fun.”  
-“I need help getting to my doctor appointment.”
-
-We realized these needs were incredibly common across senior communities.
-
-So we created B&B Experiences — a service designed specifically to bring convenience, fun, and reliable support directly to senior living communities.
-
-</p>
-
-</section>
-
-
-<section id="services">
-
-<h2>Our Three Experiences</h2>
-
-<div class="services">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80">
-
-<h3>B&B Treats</h3>
-
-<p class="large">
-
-High-quality vending machines placed directly inside senior living communities.
-
-Residents vote every month on which snacks they want stocked.
-
-Favorites often include:
-• Milano Cookies  
-• Peanut M&M's  
-• Cheez-It Crackers  
-
-We handle everything end-to-end: installation, restocking, and snack selection.
-
-Currently accepting <b>10 new senior communities.</b>
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&w=1600&q=80">
-
-<h3>B&B Tours</h3>
-
-<p class="large">
-
-Once-a-month fun outings for seniors.
-
-Examples in the Bay Area include:
-
-• Santa Cruz Boardwalk  
-• Monterey Bay Aquarium  
-• Local museums and scenic drives  
-
-We provide transportation, meals, water, prizes, and souvenirs.
-
-Current waitlist: <b>2 months</b>.
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1600&q=80">
-
-<h3>B&B Transportation</h3>
-
-<p class="large">
-
-Safe, insured rides specifically designed for seniors.
-
-Appointments include:
-
-• Doctor visits  
-• Dental appointments  
-• Physical therapy  
-
-Drivers are trained to assist seniors with care and patience.
-
-Current waitlist: <b>3 months</b>.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="contact">
-
-<h2>Partner With B&B Experiences</h2>
-
-<p class="large">
-
-We are currently onboarding a limited number of senior living communities for our vending machine program.
-
-To learn more or join the waitlist, contact us below.
-
-</p>
-
-<p>
-📧 <a href="mailto:hello@bbexperiences.com">hello@bbexperiences.com</a>
-</p>
-
-<p class="large">
-Our team will respond within 24 hours.
-</p>
-
-</section>
-
-
-<footer>
-
-<p>B&B Experiences</p>
-<p>Serving Senior Living Communities</p>
-
-</footer>
-
-
+  <div class="topbar">
+    B&amp;B Treats is now welcoming new communities. Limited to <strong>10 openings</strong>.
+    Email <a href="mailto:hello@bbexperiences.com">hello@bbexperiences.com</a>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="B&B Experiences home">
+        <div class="brand-mark">B&amp;B</div>
+        <div class="brand-copy">
+          <h1>B&amp;B Experiences</h1>
+          <p>Thoughtful treats, memorable tours, and reliable transportation for senior living</p>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#why">Why B&amp;B</a>
+        <a href="#community">For Communities</a>
+        <a href="#services">Our Experiences</a>
+        <a href="#about">About Us</a>
+        <a href="#contact" class="nav-cta">Email Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <div class="eyebrow">An extension of the family for senior living communities</div>
+          <h2>Wonderful experiences for senior living, thoughtfully handled from start to finish.</h2>
+          <p class="hero-lead">
+            B&amp;B Experiences was created to bring more joy, more comfort, and more peace of mind into everyday senior living.
+            Through resident-favorite treats, enjoyable outings, and dependable transportation, we help communities offer experiences
+            that feel thoughtful, personal, and genuinely cared for.
+          </p>
+
+          <div class="hero-sub">
+            <div class="hero-point">
+              <span>1</span>
+              <div><strong>We feel like an extension of the family</strong> — warm, attentive, and built around what residents actually want.</div>
+            </div>
+            <div class="hero-point">
+              <span>2</span>
+              <div><strong>We make it easy for communities</strong> — our team handles the planning, logistics, and execution end to end.</div>
+            </div>
+            <div class="hero-point">
+              <span>3</span>
+              <div><strong>We create experiences residents remember</strong> — small comforts and special moments that make daily life feel better.</div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:hello@bbexperiences.com?subject=B%26B%20Experiences%20Inquiry">
+              Request More Information
+            </a>
+            <a class="btn btn-secondary" href="#services">Explore Our Experiences</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Program availability">
+          <h3>Current Availability</h3>
+          <p>
+            Communities can partner with B&amp;B across three experience pillars designed specifically for senior living.
+          </p>
+
+          <div class="status-list">
+            <div class="status-item">
+              <div>
+                <strong>B&amp;B Treats</strong>
+                <small>Modern vending, resident voting, and full-service snack management</small>
+              </div>
+              <div class="pill">10 spots open</div>
+            </div>
+
+            <div class="status-item">
+              <div>
+                <strong>B&amp;B Tours</strong>
+                <small>Thoughtful outings with transportation, food, water, prizes, and souvenirs</small>
+              </div>
+              <div class="pill">2 month waitlist</div>
+            </div>
+
+            <div class="status-item">
+              <div>
+                <strong>B&amp;B Transportation</strong>
+                <small>Reliable rides for appointments and essential outings</small>
+              </div>
+              <div class="pill">3 month waitlist</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="why" class="intro-band">
+      <div class="container">
+        <div class="section-head">
+          <h2>A better way to bring joy, convenience, and comfort into senior living</h2>
+          <p>
+            B&amp;B Experiences was built around the real requests seniors make most often and the kinds of thoughtful touches
+            families wish every community could easily provide.
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-card">
+            <h3>Resident-centered</h3>
+            <p>Everything starts with what residents actually enjoy, ask for, and look forward to each month.</p>
+          </div>
+          <div class="intro-card">
+            <h3>Warm and personal</h3>
+            <p>Our services are designed to feel thoughtful and familiar, not transactional or one-size-fits-all.</p>
+          </div>
+          <div class="intro-card">
+            <h3>Easy for staff</h3>
+            <p>We take work off your team by managing the details behind the scenes from beginning to end.</p>
+          </div>
+          <div class="intro-card">
+            <h3>Family-aligned</h3>
+            <p>We understand what loved ones worry about, because we built this after supporting our own aging parents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>The three needs that inspired B&amp;B Experiences</h2>
+          <p>
+            When our own parents moved into senior living, the same requests came up over and over. Those experiences became
+            the foundation for everything we built.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card">
+            <div class="problem-number">1</div>
+            <h3>“Can you bring me my favorite snacks?”</h3>
+            <p>
+              Familiar favorites matter. Treats like Peanut M&amp;M’s, Milano Cookies, and Cheez-It Crackers may seem small,
+              but they create comfort, choice, and something to look forward to.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-number">2</div>
+            <h3>“I wish there was something fun to do.”</h3>
+            <p>
+              Many seniors crave fresh scenery, special outings, and simple adventures. A well-planned field trip can bring
+              joy, conversation, and a welcome break from routine.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-number">3</div>
+            <h3>“How do I get to my appointment?”</h3>
+            <p>
+              Transportation can be one of the most stressful gaps for families and facilities. Dependable rides matter,
+              especially when the destination is important and timing is critical.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="admin-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why senior living communities partner with B&amp;B Experiences</h2>
+          <p>
+            After years of selling into senior living, the strongest value proposition is simple: help the community offer something
+            residents and families can feel immediately, while making life easier for staff behind the scenes.
+          </p>
+        </div>
+
+        <div class="admin-grid">
+          <div class="admin-card">
+            <h3>Enhances resident experience</h3>
+            <p>
+              Residents feel seen when experiences reflect their actual preferences. Monthly snack voting, enjoyable outings,
+              and dependable rides create moments that feel personal rather than generic.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <h3>Supports family peace of mind</h3>
+            <p>
+              Families want to know their loved one has more than just care. They want comfort, enjoyment, and practical help.
+              B&amp;B helps communities deliver that added layer of reassurance.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <h3>Reduces operational burden</h3>
+            <p>
+              Communities are busy. We remove the need for your team to source snacks, coordinate outings, or solve transportation
+              requests one by one. We manage the process for you.
+            </p>
+          </div>
+
+          <div class="admin-card">
+            <h3>Adds a differentiating amenity</h3>
+            <p>
+              B&amp;B Treats, Tours, and Transportation can strengthen the everyday experience your community offers, giving you
+              another meaningful point of distinction for both current and prospective families.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our three experience pillars</h2>
+          <p>
+            Each pillar is designed to be thoughtful, polished, and easy for communities to say yes to.
+          </p>
+        </div>
+
+        <div class="services-wrap">
+          <article class="service-card">
+            <div
+              class="service-image"
+              style="background-image:url('https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=2200&q=80');"
+              aria-label="Modern vending machines"
+            ></div>
+            <div class="service-content">
+              <div class="service-tag">B&amp;B Treats</div>
+              <h3>A modern vending experience residents actually enjoy</h3>
+              <p>
+                B&amp;B Treats brings intuitive, high-quality vending machines into senior living communities and turns them into
+                something more personal, interactive, and fun.
+              </p>
+              <ul class="bullets">
+                <li>Residents vote every month on the treats they want to see stocked</li>
+                <li>Popular favorites can include Peanut M&amp;M’s, Milano Cookies, Cheez-It Crackers, trail mix, and more</li>
+                <li>We handle machine placement, snack sourcing, restocking, and ongoing management</li>
+                <li>Communities get a polished amenity without having to manage the details internally</li>
+              </ul>
+              <div class="service-note">Now accepting 10 communities on a first come, first served basis</div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-content">
+              <div class="service-tag">B&amp;B Tours</div>
+              <h3>Fun field trips that bring energy and excitement to the month</h3>
+              <p>
+                B&amp;B Tours gives residents something special to look forward to — carefully planned outings that feel joyful,
+                comfortable, and memorable.
+              </p>
+              <ul class="bullets">
+                <li>Bay Area outings may include Santa Cruz, Monterey Bay, museums, local landmarks, shopping, or scenic destinations</li>
+                <li>We coordinate transportation, food, water, prizes, and souvenirs</li>
+                <li>Tours are designed to feel engaging and celebratory, not complicated or stressful</li>
+                <li>Communities can offer a signature experience without having to build the program themselves</li>
+              </ul>
+              <div class="service-note">Current waitlist: 2 months</div>
+            </div>
+            <div
+              class="service-image"
+              style="background-image:url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=2200&q=80');"
+              aria-label="Older adults enjoying a museum or field trip style outing"
+            ></div>
+          </article>
+
+          <article class="service-card">
+            <div
+              class="service-image"
+              style="background-image:url('https://images.unsplash.com/photo-1556122071-e404eaedb77f?auto=format&fit=crop&w=2200&q=80');"
+              aria-label="Comfortable accessible transportation van"
+            ></div>
+            <div class="service-content">
+              <div class="service-tag">B&amp;B Transportation</div>
+              <h3>Reliable transportation designed with seniors in mind</h3>
+              <p>
+                B&amp;B Transportation helps communities and families feel more confident about how residents get to the places
+                that matter most.
+              </p>
+              <ul class="bullets">
+                <li>Ideal for doctor visits, dental appointments, therapy, and other critical destinations</li>
+                <li>Built around reliability, comfort, and a more senior-focused experience</li>
+                <li>Helps reduce the stress families often feel when transportation becomes difficult to coordinate</li>
+                <li>Senior living communities can request to be added to the waitlist now</li>
+              </ul>
+              <div class="service-note">Current waitlist: 3 months</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=2200&q=80"
+            alt="Warm family-oriented senior experience"
+          />
+        </div>
+
+        <div class="about-copy">
+          <h2>About B&amp;B Experiences</h2>
+          <p>
+            We are a couple who built B&amp;B Experiences after going through the very real experience of placing our own aging
+            parents into senior living communities.
+          </p>
+          <p>
+            During visits, we kept hearing the same requests: favorite treats, a fun outing, and a dependable ride to appointments.
+            Those moments showed us that what seniors often want most are not just services — they want experiences that feel personal,
+            familiar, and cared for.
+          </p>
+          <p>
+            That is why B&amp;B exists: to help communities offer residents wonderful experiences that feel like an extension of the family.
+          </p>
+
+          <div class="about-panel">
+            <h3>What makes B&amp;B different</h3>
+            <ul>
+              <li>We built this from lived experience, not theory</li>
+              <li>We understand both the resident perspective and the family perspective</li>
+              <li>We focus on warmth, dignity, fun, and reliability</li>
+              <li>We make it easy for communities by handling the process end to end</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-copy">
+            <h2>Interested in bringing B&amp;B Experiences to your community?</h2>
+            <p>
+              Email us to request additional information, ask questions, or reserve one of the remaining B&amp;B Treats openings.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:hello@bbexperiences.com?subject=B%26B%20Experiences%20Inquiry">
+              hello@bbexperiences.com
+            </a>
+            <div class="contact-small">We aim to respond within 1 business day.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div><strong>B&amp;B Experiences</strong> — wonderful experiences for senior living</div>
+      <div>Email: hello@bbexperiences.com</div>
+    </div>
+  </footer>
 </body>
 </html>
